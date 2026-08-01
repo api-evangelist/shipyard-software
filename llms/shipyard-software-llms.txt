@@ -1,0 +1,58 @@
+# Clipper
+
+## Clipper
+
+- [What is Clipper?](https://docs.clipper.exchange/introduction/what-is-clipper.md): Clipper is the blue-chip DEX with no impermanent loss.
+- [How Clipper Makes Money for LPs](https://docs.clipper.exchange/introduction/how-clipper-makes-money-for-lps.md)
+- [How LPs Earn from Arbitrage](https://docs.clipper.exchange/introduction/how-lps-earn-from-arbitrage.md)
+- [Clipper's Benchmark: No Impermanent Loss](https://docs.clipper.exchange/introduction/clippers-benchmark-no-impermanent-loss.md)
+- [Clipper vs. CPMMs vs. HODLing](https://docs.clipper.exchange/introduction/clippers-benchmark-no-impermanent-loss/clipper-vs.-cpmms-vs.-hodling.md)
+- [Appendix: Math](https://docs.clipper.exchange/introduction/clippers-benchmark-no-impermanent-loss/appendix-math.md)
+- [Why Clipper Has Better Trading Prices](https://docs.clipper.exchange/introduction/why-clipper-has-better-trading-prices.md)
+- [DAO Protocol Fees](https://docs.clipper.exchange/introduction/dao-protocol-fees.md)
+- [DAO Governance](https://docs.clipper.exchange/introduction/dao-governance.md): Clipper is governed by AdmiralDAO.
+- [Liquidity Pools](https://docs.clipper.exchange/how-to-use-clipper/liquidity-pools.md)
+- [Depositing & Withdrawing](https://docs.clipper.exchange/how-to-use-clipper/liquidity-pools/depositing-and-withdrawing.md)
+- [Farming Pools](https://docs.clipper.exchange/how-to-use-clipper/liquidity-pools/farming-pools.md)
+- [Trading](https://docs.clipper.exchange/how-to-use-clipper/trading.md)
+- [Community Adventures](https://docs.clipper.exchange/how-to-use-clipper/community-adventures.md): Clipper periodically hosts Adventures, which are immersive experiences that are a cross between a digital scavenger hunt and a turn-based game
+- [FAQs](https://docs.clipper.exchange/how-to-use-clipper/faq.md): 🦜 Frequently asked questions
+- [Community Governance](https://docs.clipper.exchange/governance-token/community-governance.md): SAIL is the governance token of AdmiralDAO.
+- [SAIL Primer](https://docs.clipper.exchange/governance-token/sail-primer.md): Note: All information in this Primer is publicly available information.
+- [Clipper Fundamentals](https://docs.clipper.exchange/governance-token/sail-primer/clipper-fundamentals.md)
+- [DEX Market Structure](https://docs.clipper.exchange/governance-token/sail-primer/dex-market-structure.md)
+- [SAIL Supply & Circulation](https://docs.clipper.exchange/governance-token/sail-primer/sail-supply-and-circulation.md): SAIL is the governance token of AdmiralDAO, the DAO behind Clipper DEX.
+- [SAIL Farming](https://docs.clipper.exchange/governance-token/sail-primer/sail-farming.md)
+- [veSAIL](https://docs.clipper.exchange/governance-token/sail-primer/vesail.md): SAIL is for Governance
+- [Token Listings](https://docs.clipper.exchange/governance-token/sail-primer/token-listings.md): A repository of third-party token listings.
+- [Audits](https://docs.clipper.exchange/disclaimers-and-technical/audits.md)
+- [Smart Contracts](https://docs.clipper.exchange/disclaimers-and-technical/smart-contracts.md)
+- [Subgraph](https://docs.clipper.exchange/disclaimers-and-technical/smart-contracts/subgraph.md)
+- [Entities](https://docs.clipper.exchange/disclaimers-and-technical/smart-contracts/subgraph/entities.md)
+- [Queries](https://docs.clipper.exchange/disclaimers-and-technical/smart-contracts/subgraph/queries.md)
+- [Integrating with Clipper RFQ](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq.md)
+- [Introduction](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/introduction.md)
+- [Guides](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides.md)
+- [How to use clipper RFQ API?](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/how-to-use-clipper-rfq-api.md)
+- [Estimate Clipper Prices](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/estimate-clipper-prices.md)
+- [Interacting with the Clipper Exchange contracts](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/interacting-with-the-clipper-exchange-contracts.md)
+- [Integration Examples](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/integration-examples.md)
+- [Swap Native token → Shorttail](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/integration-examples/swap-native-token-shorttail.md)
+- [Swap Shorttail → Native token](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/integration-examples/swap-shorttail-native-token.md)
+- [Swap Shorttail → Shorttail](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/integration-examples/swap-shorttail-shorttail.md)
+- [Complete Swap Flow](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/integration-examples/complete-swap-flow.md)
+- [Blade Pool LP withdraw process](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/blade-pool-lp-withdraw-process.md)
+- [API Reference](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference.md)
+- [API v2](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2.md)
+- [Overview](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2/overview.md)
+- [Pool v2](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2/pool-v2.md)
+- [Quote v2](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2/quote-v2.md)
+- [Deposit v2](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2/deposit-v2.md)
+- [API v1](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v1.md)
+- [Overview](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v1/overview.md)
+- [Pool](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v1/pool.md)
+- [Quote](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v1/quote.md)
+- [Sign](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v1/sign.md)
+- [Troubleshooting & FAQs](https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/troubleshooting-and-faqs.md)
+- [Terms of Service](https://docs.clipper.exchange/disclaimers-and-technical/terms-of-service.md): Adopted: June 15, 2020
+- [Privacy Policy](https://docs.clipper.exchange/disclaimers-and-technical/privacy-policy.md): Last updated July 23, 2021

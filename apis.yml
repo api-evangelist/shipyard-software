@@ -1,8 +1,27 @@
 aid: shipyard-software
 name: Shipyard Software
-description: 'Shipyard Software is a company surfaced as a portfolio company of polychain and added to
-  the API Evangelist network as a stub for enrichment. Sector: defi. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Shipyard Software is the DeFi technology company behind Clipper, a
+  decentralized exchange (DEX) designed for retail traders that offers
+  blue-chip token swaps with no impermanent loss for liquidity providers.
+  Founded in 2021 by Mark Lurie and backed by Polychain and others, Shipyard
+  built market-making technology across eight blockchains before being
+  acquired by Sushi Labs in January 2025. Clipper, now governed by AdmiralDAO,
+  exposes a Request-for-Quote (RFQ) swap API for DEX aggregators and a
+  Graph-hosted GraphQL subgraph for querying on-chain pool data.
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://cdn.prod.website-files.com/60df16dcc790bfc63d95ec12/61d7236cbf760c5b4af9369f_shipyard-illustrations-social.png
 url: https://raw.githubusercontent.com/api-evangelist/shipyard-software/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,16 +31,105 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
 - Defi
-apis: []
+- DEX
+- Decentralized Exchange
+- Cryptocurrency
+- Trading
+- Blockchain
+- Web3
+- Liquidity
+- RFQ
+apis:
+- aid: shipyard-software:clipper-rfq-api
+  name: Clipper RFQ API
+  description: >-
+    Request-for-Quote swap API for the Clipper DEX. Aggregators retrieve pool
+    state (price feeds, k factor), request firm quotes, and sign quotes to
+    obtain the EIP-2098 signature/calldata needed to execute swaps against
+    Clipper pool contracts on Ethereum, Polygon, Optimism, Mantle, and
+    Arbitrum. API v2 is served from blade-api.sushi.com with x-api-key
+    authentication; API v1 remains at api.clipper.exchange.
+  humanURL: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq
+  baseURL: https://blade-api.sushi.com
+  tags:
+  - DeFi
+  - DEX
+  - Swaps
+  - RFQ
+  - Quotes
+  properties:
+  - type: Documentation
+    url: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq
+  - type: APIReference
+    url: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2/overview
+  - type: GettingStarted
+    url: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/how-to-use-clipper-rfq-api
+- aid: shipyard-software:clipper-subgraph
+  name: Clipper Subgraph (GraphQL)
+  description: >-
+    GraphQL API endpoints hosted on The Graph that index Clipper's smart
+    contracts across Ethereum, Optimism, Polygon, and Arbitrum — pools, swaps,
+    deposits, withdrawals, volume, and fee data for analytics and integrations.
+  humanURL: https://docs.clipper.exchange/disclaimers-and-technical/smart-contracts/subgraph
+  baseURL: https://api.thegraph.com/subgraphs/name/edoapp/clipper
+  tags:
+  - GraphQL
+  - Subgraph
+  - Analytics
+  - DeFi
+  properties:
+  - type: Documentation
+    url: https://docs.clipper.exchange/disclaimers-and-technical/smart-contracts/subgraph
+  - type: GraphQL
+    url: graphql/shipyard-software-clipper-subgraph.graphql
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/shipyard-software-domain-security.yml
 - type: Website
-  url: https://shipyardsoftware.org
+  url: https://www.shipyardsoftware.org
+- type: Documentation
+  url: https://docs.clipper.exchange
+- type: APIReference
+  url: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2/overview
+- type: GettingStarted
+  url: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/guides/how-to-use-clipper-rfq-api
+- type: Blog
+  url: https://www.shipyardsoftware.org/journal
+- type: GitHubOrganization
+  url: https://github.com/shipyard-software
+- type: Support
+  url: http://discord.clipper.exchange
+- type: TermsOfService
+  url: https://docs.clipper.exchange/disclaimers-and-technical/terms-of-service
+- type: PrivacyPolicy
+  url: https://docs.clipper.exchange/disclaimers-and-technical/privacy-policy
+- type: Twitter
+  url: https://twitter.com/shipyardsw
+- type: LLMsTxt
+  url: llms/shipyard-software-llms.txt
+- type: ErrorCatalog
+  url: errors/shipyard-software-problem-types.yml
+- type: Authentication
+  url: authentication/shipyard-software-authentication.yml
+- type: Conventions
+  url: conventions/shipyard-software-conventions.yml
+- type: Lifecycle
+  url: lifecycle/shipyard-software-lifecycle.yml
+- type: Conformance
+  url: conformance/shipyard-software-conformance.yml
+- type: DataModel
+  url: data-model/shipyard-software-data-model.yml
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 10
+  pass: local-v1

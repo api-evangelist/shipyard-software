@@ -1,0 +1,32 @@
+generated: '2026-07-21'
+method: searched
+docs: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2/overview
+description: >-
+  Authentication profile for the Clipper RFQ API, captured from the published
+  API reference. The API is rate-limited; DEX aggregators obtain API
+  credentials by contacting aggregators@shipyardsoftware.org. API v2 requires
+  API key auth; API v1 still accepts a deprecated HTTP Basic scheme.
+summary:
+  types: [apiKey, http-basic]
+  api_key_in: [header]
+credentials_contact: aggregators@shipyardsoftware.org
+schemes:
+- name: ApiKeyAuth
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  status: current
+  notes: >-
+    Required for all API v2 endpoints (blade-api.sushi.com) and supported on
+    API v1 quote/sign endpoints.
+  docs: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2/overview
+- name: BasicAuth
+  type: http
+  scheme: basic
+  status: deprecated
+  notes: >-
+    API v1 only — username:password credentials sent Base64-encoded in the
+    Authorization header. Deprecated; the docs direct existing Basic users to
+    request an API key. The v1 /rfq/pool endpoint currently only supports
+    Basic Authentication (use Pool V2 for API key auth).
+  docs: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v1/overview

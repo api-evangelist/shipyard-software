@@ -1,0 +1,52 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v2/overview
+format: custom-envelope
+description: >-
+  Error catalog for the Clipper RFQ API (v1 and v2), captured from the
+  published API reference. Errors are returned in a JSON envelope with
+  errorMessage / errorType and, when Clipper has a specific code, errorCode
+  plus a data[] array of pydantic-style validation details for invalid input.
+envelope:
+  fields:
+    errorMessage: String — description of the error
+    errorType: String — type of the error (e.g. BadData, Forbidden)
+    errorCode: Integer — returned only when Clipper has a code for the error
+    data: Array — returned only when the input data is invalid (field-level validation details)
+problems:
+- status: 400
+  title: Bad Request
+  detail: Invalid data in the request
+- status: 401
+  title: Unauthorized
+  detail: Missing or invalid credentials
+- status: 403
+  title: Forbidden Error
+  detail: 'Access is forbidden (errorType: Forbidden, e.g. invalid API key)'
+- status: 500
+  title: Internal Server Error
+- status: 503
+  title: External Service Error
+clipper_error_codes:
+- code: 422
+  title: Invalid input data
+  detail: >-
+    Returned in the errorCode field with errorType BadData; data[] carries
+    field-level validation errors (type, loc, msg, input).
+- code: 409
+  title: Quote problems
+  detail: Returned in the errorCode field when a quote cannot be produced or honored.
+examples:
+- case: Missing required field chain_id on quote
+  response:
+    errorMessage: Invalid input data
+    errorType: BadData
+    errorCode: 422
+- case: Unsupported asset symbol
+  response:
+    errorMessage: 'input_asset_symbol: INVALIDASSET is not supported'
+    errorType: BadData
+- case: Invalid credentials
+  response:
+    errorMessage: 'Auth: Access is forbidden'
+    errorType: Forbidden

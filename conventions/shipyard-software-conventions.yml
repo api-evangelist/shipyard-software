@@ -1,0 +1,61 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq
+description: >-
+  Cross-cutting request/response conventions of the Clipper RFQ API, captured
+  from the published integration docs. A quote-then-sign RFQ flow: clients
+  fetch pool state, request a firm quote, then sign the quote to receive an
+  EIP-2098 signature (or raw calldata) for on-chain execution.
+base_urls:
+  v2: https://blade-api.sushi.com
+  v1: https://api.clipper.exchange
+api_style: REST over HTTPS, JSON requests and responses
+authentication:
+  scheme: API key in x-api-key header (v2); deprecated HTTP Basic on v1
+  detail: authentication/shipyard-software-authentication.yml
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key mechanism is documented. Quote immutability is handled
+    by quote lifetimes instead — each quote has an id (UUID), a must_accept_by
+    timestamp, and a good_until lifetime; the server will not sign a quote
+    after must_accept_by has passed, so clients re-request rather than retry.
+pagination:
+  style: none
+  notes: >-
+    Responses are bounded collections (pools per chain) or single objects
+    (quote, sign); no pagination parameters are documented.
+versioning:
+  style: uri-path
+  current: v2
+  notes: >-
+    v2 endpoints embed the version and chain id in the path
+    (/rfq/v2/pool/{chain_id}, /rfq/v2/quote/{chain_id}) on
+    blade-api.sushi.com; v1 endpoints (/rfq/pool, /rfq/quote, /rfq/sign)
+    remain on api.clipper.exchange. See lifecycle/shipyard-software-lifecycle.yml.
+error_envelope:
+  shape: '{errorMessage, errorType, errorCode?, data?}'
+  detail: errors/shipyard-software-problem-types.yml
+rate_limits:
+  signaled: false
+  notes: >-
+    The docs state rate limits are applied to prevent abuse; aggregators
+    contact aggregators@shipyardsoftware.org for credentials that lift them.
+    No numeric limits or rate-limit response headers are documented.
+request_semantics:
+  quote_lifetime: >-
+    time_in_seconds controls how long a quote lives (longer windows quote
+    worse prices); must_accept_by bounds acceptance; good_until is the quote
+    TTL used on-chain.
+  wallet_verification: >-
+    Clipper verifies swap wallets to restrict toxic bot flow — wallets must be
+    EOAs (not contracts), hold a minimum amount of ETH, and have prior
+    transactions.
+  native_tokens: >-
+    native_input / native_output flags (mutually exclusive) switch the signed
+    contract call between sellEthForToken and sellTokenForEth for raw
+    ETH/MATIC legs.
+cross_links:
+  errors: errors/shipyard-software-problem-types.yml
+  authentication: authentication/shipyard-software-authentication.yml
+  lifecycle: lifecycle/shipyard-software-lifecycle.yml

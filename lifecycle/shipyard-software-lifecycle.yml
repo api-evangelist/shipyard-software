@@ -1,0 +1,37 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.clipper.exchange/disclaimers-and-technical/integrating-with-clipper-rfq/api-reference/api-v1/overview
+description: >-
+  Lifecycle posture of the Clipper RFQ API, captured from the published API
+  reference. Two API versions coexist; the platform migrated to Sushi Labs
+  infrastructure after the January 2025 acquisition of Shipyard Software.
+versioning:
+  scheme: uri-path
+  current: v2
+  versions:
+  - version: v2
+    base_url: https://blade-api.sushi.com
+    status: current
+    notes: API key auth required; endpoints /rfq/v2/pool/{chain_id}, /rfq/v2/quote/{chain_id}, deposit v2.
+  - version: v1
+    base_url: https://api.clipper.exchange
+    status: maintained
+    notes: Endpoints /rfq/pool, /rfq/quote, /rfq/sign; supports API key and deprecated Basic auth.
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notices:
+  - >-
+    Basic Authentication on API v1 is documented as deprecated; users are
+    directed to contact support for an API key.
+  - >-
+    API v2 announces a new domain (blade-api.sushi.com), superseding
+    api.clipper.exchange for v2 traffic.
+  notes: No formal deprecation policy page or RFC 8594 Sunset header support is published.
+sla: null
+status_page: null
+notes: >-
+  No public status page or SLA was found for the Clipper RFQ API. Corporate
+  milestones: Clipper launched 2021; Shipyard Software was acquired by Sushi
+  Labs (announced January 28, 2025) and Clipper governance sits with
+  AdmiralDAO.

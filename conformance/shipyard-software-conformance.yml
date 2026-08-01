@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.clipper.exchange/disclaimers-and-technical/audits
+description: >-
+  Industry / cross-cutting standards posture for the Clipper RFQ API and
+  Clipper smart contracts, from published docs and the captured GraphQL
+  subgraph schema. Clipper's assurance surface is smart-contract audits
+  rather than enterprise compliance certifications.
+standards:
+- id: oauth2
+  conforms: false
+  evidence: API uses x-api-key header auth (and deprecated HTTP Basic on v1); no OAuth 2.0 surface documented.
+- id: oidc
+  conforms: false
+  evidence: No OpenID Connect discovery documents on any host (/.well-known/openid-configuration 404/403).
+- id: eip-2098
+  conforms: true
+  evidence: >-
+    The /rfq/sign response returns an EIP-2098 "short signature" representation
+    (documented in the Sign endpoint reference).
+- id: graphql
+  conforms: true
+  evidence: >-
+    Clipper publishes Graph-hosted GraphQL subgraphs (Ethereum, Optimism,
+    Polygon, Arbitrum); schema captured in
+    graphql/shipyard-software-clipper-subgraph.graphql.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom {errorMessage, errorType, errorCode, data} envelope, not application/problem+json.
+- id: rfc9116-security-txt
+  conforms: false
+  evidence: No /.well-known/security.txt on any probed host.
+- id: pagination
+  conforms: false
+  evidence: No pagination conventions documented.
+- id: idempotency
+  conforms: false
+  evidence: No idempotency-key mechanism documented; quote TTLs (must_accept_by/good_until) bound retries instead.
+assurance:
+  smart_contract_audits:
+  - auditor: Quantstamp
+    url: https://docs.clipper.exchange/disclaimers-and-technical/audits
+  - auditor: Solidified
+    url: https://docs.clipper.exchange/disclaimers-and-technical/audits
+  bug_bounty:
+    program: ImmuneFi (3-week bounty at launch; no active public program found — immunefi.com/bounty/clipper returns 404)
+  notes: >-
+    New deploys are internally and externally audited per the audits page. No
+    SOC 2 / ISO 27001 / PCI-style compliance program is published, so no
+    Compliance pointer is emitted.

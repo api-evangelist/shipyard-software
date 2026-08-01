@@ -1,0 +1,59 @@
+generated: '2026-07-21'
+method: derived
+source: graphql/shipyard-software-clipper-subgraph.graphql
+docs: https://docs.clipper.exchange/disclaimers-and-technical/smart-contracts/subgraph/entities
+description: >-
+  Entity-relationship graph for Clipper's data model, derived from the
+  published Clipper RFQ subgraph GraphQL schema (The Graph) and its entities
+  reference. Pools hold tokens and pairs; users swap, deposit, and withdraw;
+  Coves are Clipper's long-tail asset pools attached to a parent pool.
+entities:
+- name: Pool
+  description: A Clipper liquidity pool contract on one chain — lifetime volume, tx counts, fees, deposits, withdrawals, revenue.
+- name: Token
+  description: An ERC-20 (or native) asset tracked by the subgraph with USD pricing.
+- name: PoolToken
+  description: Join entity — a token held by a pool.
+- name: Pair
+  description: A tradable asset pair (asset0/asset1).
+- name: PoolPair
+  description: Join entity — a pair available on a pool.
+- name: Swap
+  description: An executed swap (immutable event) with in/out tokens, sender, and USD values.
+- name: Deposit
+  description: An LP deposit into a pool (immutable event).
+- name: Withdrawal
+  description: An LP withdrawal from a pool (immutable event).
+- name: User
+  description: A wallet that has interacted with Clipper.
+- name: Cove
+  description: A Clipper Cove — long-tail asset pool bound to a parent pool and a longtail token.
+- name: CoveDeposit
+  description: Deposit event into a Cove.
+- name: CoveWithdrawal
+  description: Withdrawal event from a Cove.
+- name: PoolVault / PoolFarmVault / PoolProtocolDepositVault
+  description: Vault contracts associated with a pool (LP, farming, protocol deposits).
+- name: PoolEvent / CoveEvent
+  description: Timeseries events aggregated into PoolStats / CoveParentStats (day/hour intervals).
+relationships:
+- {from: PoolToken, to: Pool, kind: belongs_to, via: pool}
+- {from: PoolToken, to: Token, kind: belongs_to, via: token}
+- {from: PoolPair, to: Pool, kind: belongs_to, via: pool}
+- {from: Pair, to: Token, kind: belongs_to, via: asset0}
+- {from: Pair, to: Token, kind: belongs_to, via: asset1}
+- {from: Swap, to: Token, kind: belongs_to, via: inToken}
+- {from: Swap, to: Token, kind: belongs_to, via: outToken}
+- {from: Swap, to: User, kind: belongs_to, via: sender}
+- {from: Swap, to: Pool, kind: belongs_to, via: pool}
+- {from: Deposit, to: Pool, kind: belongs_to, via: pool}
+- {from: Withdrawal, to: Pool, kind: belongs_to, via: pool}
+- {from: Cove, to: Pool, kind: belongs_to, via: pool}
+- {from: Cove, to: Token, kind: belongs_to, via: longtailAsset}
+- {from: CoveDeposit, to: Cove, kind: belongs_to, via: cove}
+- {from: CoveWithdrawal, to: Cove, kind: belongs_to, via: cove}
+- {from: PoolVault, to: Pool, kind: belongs_to, via: pool}
+- {from: PoolFarmVault, to: Pool, kind: belongs_to, via: pool}
+- {from: PoolFarmVault, to: Token, kind: belongs_to, via: rewardToken}
+- {from: PoolLpTransfer, to: Pool, kind: belongs_to, via: oldPool}
+- {from: PoolLpTransfer, to: Pool, kind: belongs_to, via: newPool}
