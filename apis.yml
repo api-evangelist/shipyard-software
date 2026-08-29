@@ -9,6 +9,17 @@ description: >-
   acquired by Sushi Labs in January 2025. Clipper, now governed by AdmiralDAO,
   exposes a Request-for-Quote (RFQ) swap API for DEX aggregators and a
   Graph-hosted GraphQL subgraph for querying on-chain pool data.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: self-serve
