@@ -22,15 +22,16 @@ deliveryModel:
   method: derived
 accessModel:
   pricing: unknown
-  onboarding: self-serve
+  onboarding: unknown
   trial: false
   try_now: false
   public: false
-  label: Self-serve signup
-  confidence: medium
+  label: Unknown
+  confidence: low
   source:
   - authentication
-  generated: '2026-07-22'
+  - security
+  generated: '2026-09-03'
   method: derived
 image: https://cdn.prod.website-files.com/60df16dcc790bfc63d95ec12/61d7236cbf760c5b4af9369f_shipyard-illustrations-social.png
 url: https://raw.githubusercontent.com/api-evangelist/shipyard-software/refs/heads/main/apis.yml
