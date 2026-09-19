@@ -81,6 +81,12 @@ apis:
   tags:
   - DeFi
   - DEX
+  - Swap
+  - RFQ
+  - Quotes
+  tags_raw:
+  - DeFi
+  - DEX
   - Swaps
   - RFQ
   - Quotes
